@@ -1,0 +1,41 @@
+```{r shared-setup, include=FALSE}
+source("R/setup.R")
+```
+
+# Colouring by categories
+
+What if we would like to add some colour to the plot, for example, a different colour for each sample. 
+
+If we look at the `geom_boxplot` help we can see under the heading called "Aesthetics" that there's an option for colour. Let's try adding that to our plot. We'll specify we want to map the Sample column to `colour = `. As we are mapping colour to a column in our data we need to put this inside the `aes()`.
+
+```{r}
+ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), colour = Sample)) + 
+  geom_boxplot()
+```
+
+Colouring the edges wasn’t quite what we had in mind. Look at the help for `geom_boxplot` to see what other aesthetic we could use. Let's try `fill = ` instead.
+
+```{r}
+ggplot(data = allinfo, mapping = aes(x = Sample, y = log2(Count + 1), fill = Sample)) + 
+  geom_boxplot()
+```
+
+That looks better. `fill = ` is used to **fill** in areas in ggplot2 plots, whereas `colour = ` is used to colour lines and points.
+
+A really nice feature about ggplot is that we can easily colour by another variable by simply changing the column we give to `fill = `.
+
+#### Exercise 
+Modify the plot above. Colour by other variables (columns) in the metadata file:
+
+1. characteristics
+2. immunophenotype
+3. \`developmental stage\` (As there is a space in the column name we need to use backticks around the name (\`\`). 
+
+_Note: backticks are not single quotes (\'\'). The backtick key is usually at the top left corner of a laptop keyboard under the ESC key. Check what happens if you don't use backticks.)_
+
+
+#### Optional exercise
+
+The `geom_boxplot` function can also take in additional arguments. For example, you can decrease the size of the outlier points by using the `outlier.size` argument like so: `geom_boxplot(outlier.size = 0.5)`. View the help page for `geom_boxplot`. Can you find a way to hide outliers altogether? Plot a boxplot with hidden outliers.
+
+

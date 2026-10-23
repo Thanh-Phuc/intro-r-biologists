@@ -1,0 +1,19 @@
+{
+  "hash": "b3283f3b245e8ecbef60f08c788daa1c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n\n# Key Points\n- Tabular data can be loaded into R with the tidyverse functions `read_csv()` and `read_tsv()`\n- Tidyverse functions such as `pivot_longer()`, `mutate()`, `filter()`, `select()`, `full_join()` can be used to manipulate data\n- A ggplot has 3 components: data (dataset), mapping (columns to plot) and geom (type of plot). Different types of plots include `geom_point()`, `geom_jitter()`, `geom_line()`, `geom_boxplot()`, `geom_violin()`.\n- `facet_wrap()` can be used to make subplots of the data\n- The aesthetics of a ggplot can be modified, such as colouring by different columns in the dataset, adding labels or changing the background\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

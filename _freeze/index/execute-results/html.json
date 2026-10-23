@@ -1,0 +1,19 @@
+{
+  "hash": "a43c5b61463fc336fcb0d7cb995f3009",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n\n# R for Biologists course\n\nR takes time to learn, like a spoken language. No one can expect to be an R expert after learning R for a few hours. This course has been designed to introduce biologists to R, showing some basics, and also some powerful things R can do (things that would be more difficult to do with Excel). The aim is to give beginners the confidence to continue learning R, so the focus here is on tidyverse and visualisation of biological data, as we believe this is a productive and engaging way to start learning R. After this short introduction you could use [this book](https://bookdown.org/ansellbr/WEHI_tidyR_course_book) to dive a bit deeper.\n\n::: {.callout-note collapse=\"true\"}\n## About this edition\n\nThis Quarto book reproduces the *Introduction to R for Biologists* course by Maria Doyle, Jessica Chung and Vicky Perreau (Melbourne Bioinformatics), originally published as a single-page R Markdown document. The text, code, exercises and figures are unchanged; the chapters are the original top-level sections.\n\nSource: [mblue9/r-intro-biologists](https://github.com/mblue9/r-intro-biologists) · Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,150 @@
+/*-- scss:defaults --*/
+
+// Course palette: deep marine blue with a teal accent, tuned for a
+// long-form R / data-visualisation teaching text.
+$primary: #14526e;
+$link-color: #1a6f8f;
+$link-hover-color: #124f65;
+$body-color: #1f2a33;
+$headings-color: #123c50;
+$font-size-root: 17px;
+$line-height-base: 1.65;
+$toc-color: #3b4d5a;
+$toc-active-border: #1a6f8f;
+$sidebar-bg: #f6f9fb;
+$sidebar-border: #e2eaf0;
+$border-color: #dde6ec;
+$code-color: #0f4c63;
+$table-border-color: #dde6ec;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "SFMono-Regular", "JetBrains Mono", Menlo, Consolas,
+  "Liberation Mono", monospace;
+
+/*-- scss:rules --*/
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1.title {
+  font-weight: 700;
+}
+
+.sidebar-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-item .chapter-number {
+  color: #8aa3b2;
+  font-variant-numeric: tabular-nums;
+}
+
+// Inline code
+code:not(pre code) {
+  background: #eef4f7;
+  color: #0f4c63;
+  padding: 0.12em 0.36em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+// Code blocks
+div.sourceCode,
+pre {
+  border-radius: 8px;
+}
+
+pre {
+  background: #f7fafc !important;
+  border: 1px solid #e3ecf1;
+  box-shadow: none;
+}
+
+pre code {
+  color: #22323d;
+}
+
+// Quarto code copy button
+.code-copy-button {
+  border-radius: 6px;
+}
+
+// Tables (including paged tibble output)
+table {
+  font-size: 0.94em;
+}
+
+table thead th {
+  background: #f2f7fa;
+  border-bottom: 2px solid #cfdde6;
+  font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+  background: #fbfdfe;
+}
+
+.dataframe,
+#quarto-margin-sidebar .toc-active {
+  color: #123c50;
+}
+
+// Callouts
+.callout {
+  border-radius: 8px;
+}
+
+.callout.callout-style-default > .callout-header {
+  font-weight: 600;
+}
+
+// Blockquotes used as asides in the original course
+blockquote {
+  border-left: 4px solid #cfe1ea;
+  background: #f8fbfc;
+  color: #354754;
+  padding: 0.6em 1em;
+}
+
+blockquote h4 {
+  font-size: 1rem;
+  color: #14526e;
+  margin-top: 0;
+}
+
+kbd {
+  background: #eef4f7;
+  border: 1px solid #cfdde6;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: #22323d;
+  box-shadow: none;
+}
+
+// Figures
+figure {
+  margin: 1.4rem 0;
+}
+
+img {
+  border-radius: 6px;
+}
+
+// Exercise headings stand out a little
+h4 {
+  color: #14526e;
+  margin-top: 1.8rem;
+}
+
+// Page footer
+.nav-footer {
+  border-top: 1px solid #e2eaf0;
+  color: #5b6b76;
+  font-size: 0.86em;
+}

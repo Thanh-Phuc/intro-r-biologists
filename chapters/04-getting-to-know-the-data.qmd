@@ -1,0 +1,75 @@
+```{r shared-setup, include=FALSE}
+source("R/setup.R")
+```
+
+# Getting to know the data
+
+When assigning a value to an object, R does not print the value. For example, here we don't see what's in the counts or sampleinfo files. But there are ways we can look at the data. We will demonstrate using the `sampleinfo` object.
+
+We can type the name of the object and this will print the first few lines and some information, such as number of rows. 
+
+```{r}
+sampleinfo
+```
+
+We can also use `dim()` to see the dimensions of an object, the number of rows and columns.
+
+```{r}
+dim(sampleinfo)
+```
+
+This show us there are 12 rows and 4 columns.
+
+In the Environment Tab in the top right panel in RStudio we can also see the number of rows and columns in the objects we have in our session.
+
+We can also take a look the first few lines with `head()`. This shows us the first 6 lines.
+
+```{r}
+head(sampleinfo)
+```
+
+We can look at the last few lines with `tail()`. This shows us the last 6 lines. This can be useful to check the bottom of the file, that it looks ok.
+```{r}
+tail(sampleinfo)
+```
+
+Or we can see the whole file with `View()`.
+
+```{r eval=FALSE}
+View(sampleinfo)
+```
+
+In the Environment tab we can see how many rows and columns the object contains and we can click on the icon to view all the contents in a tab. This runs the command View() for us.
+
+We can see all the column names with `colnames()`.
+```{r}
+colnames(sampleinfo)
+```
+
+We can access individual columns by name using the `$` symbol. For example we can see what's contained in column X1.
+
+```{r}
+sampleinfo$X1
+```
+
+If we just wanted to see the first 3 values in the column we can specify this using square brackets.
+
+```{r}
+sampleinfo$X1[1:3]
+```
+
+Other useful commands for checking data are `str()` and `summary()`.
+
+`str()` shows us the structure of our data. It shows us what columns there are, the first few entries, and what data type they are e.g. character or numbers (double or integer).
+
+```{r}
+str(sampleinfo)
+```
+
+`summary()` generates summary statistics of our data. For numeric columns (columns of type double or integer) it outputs statistics such as the min, max, mean and median. We will demonstrate this with the counts file as it contains numeric data. For character columns it shows us the length (how many rows).
+
+```{r}
+summary(counts)
+```
+
+

@@ -1,0 +1,84 @@
+```{r shared-setup, include=FALSE}
+source("R/setup.R")
+```
+
+# Creating subplots for each gene
+
+With ggplot we can easily make subplots using *faceting*. For example we can make [stripcharts](http://www.sthda.com/english/wiki/ggplot2-stripchart-jitter-quick-start-guide-r-software-and-data-visualization). These are a type of scatterplot and are useful when there are a small number of samples (when there are not too many points to visualise). Here we will make stripcharts plotting expression by the groups (basal virgin, basal pregnant, basal lactating, luminal virgin, luminal pregnant, luminal lactating) for each gene. 
+
+## Make shorter category names
+
+First we'll use `mutate()` to add a column with shorter group names to use in the plot, as the group names in the characteristics column are quite long.
+
+```{r}
+allinfo <- mutate(allinfo, Group = case_when(
+        str_detect(characteristics, "basal.*virgin") ~  "bvirg",
+        str_detect(characteristics, "basal.*preg")  ~  "bpreg",
+        str_detect(characteristics, "basal.*lact")  ~  "blact",
+        str_detect(characteristics, "luminal.*virgin")  ~  "lvirg",
+        str_detect(characteristics, "luminal.*preg")  ~  "lpreg",
+        str_detect(characteristics, "luminal.*lact")  ~  "llact"
+       ))
+```
+
+Have a look at this data using `head()`. You should see a new column called `Group` has been added to the end.
+
+```{r}
+head(allinfo)
+```
+
+## Filter for genes of interest
+
+We can make plots for a set of given genes.
+
+
+
+
+```{r}
+mygenes <- c("Csn1s2a", "Csn1s1", "Csn2", "Glycam1", "COX1", "Trf", "Wap", "Eef1a1")
+```
+
+
+
+
+We filter our data for just these genes of interest. We use `%in%` to check if a value is in a set of values.
+
+```{r}
+mygenes_counts <- filter(allinfo, gene_symbol %in% mygenes)
+```
+
+## Create plots for each gene
+
+We can make boxplots for just these genes. We *facet* on the `gene_symbol` column using `facet_wrap()`. We add the tilde symbol `~ ` in front of the column we want to facet on.
+
+```{r}
+ggplot(data = mygenes_counts, 
+       mapping = aes(x = Group, y = log2(Count + 1), fill = Group)) +
+  geom_boxplot() +
+  facet_wrap(~ gene_symbol)
+```
+
+The boxplots don't look good as we only have two values per group. We could just plot the individual points instead. We could use `geom_point()` to make a scatterplot.
+```{r}
+ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
+  geom_point() +
+  facet_wrap(~ gene_symbol)
+```
+
+The points are overlapping so we will make a jitter plot using `geom_jitter()`. A **jitter plot** is similar to a scatter plot. It adds a small amount of random variation to the location of each point so they don’t overlap. If is also quite common to combine jitter plots with other types of plot, for example, [jitter with boxplot](https://simplystatistics.org/2019/02/21/dynamite-plots-must-die/).
+
+```{r}
+ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
+  geom_jitter() +
+  facet_wrap(~ gene_symbol)
+```
+
+We can colour the groups similar to before using `colour = `.
+
+```{r}
+ggplot(data = mygenes_counts, 
+       mapping = aes(x = Group, y = log2(Count + 1), colour = Group)) +
+  geom_jitter() +
+  facet_wrap(~ gene_symbol)
+```
+

@@ -1,0 +1,32 @@
+```{r shared-setup, include=FALSE}
+source("R/setup.R")
+```
+
+# Saving plots
+
+We can save plots interactively by clicking Export in the Plots window and saving as e.g. "myplot.pdf". Or we can output plots to pdf using `pdf()` followed by `dev.off()`. We put our plot code after the call to `pdf()` and before closing the plot device with `dev.off()`.
+
+Let's save our last plot.
+
+```{r, eval=FALSE}
+pdf("myplot.pdf")
+ggplot(data = mygenes_counts, 
+       mapping = aes(x = Group_f, y = log2(Count + 1), colour = Group_f)) +
+  geom_jitter() +
+  facet_wrap(~ gene_symbol) +
+  labs(x = "Cell type and stage", y = "Count", title = "Mammary gland RNA-seq data") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+dev.off()
+```
+
+
+#### Exercise
+1. Download the raw counts for this dataset from GREIN
+  a. Make a boxplot. Do the samples look any different to the normalised counts?
+  b. Make subplots for the same set of 8 genes. Do they look any different to the normalised counts?
+2. Download the normalised counts for the GSE63310 dataset from GREIN. Make boxplots colouring the samples using different columns in the metadata file.
+
+

@@ -1,0 +1,56 @@
+project:
+  type: book
+  output-dir: docs
+  execute-dir: project
+
+book:
+  title: "Introduction to R for Biologists"
+  author:
+    - "Maria Doyle"
+    - "Jessica Chung"
+    - "Vicky Perreau"
+  date: today
+  date-format: "DD MMMM YYYY"
+  chapters:
+    - index.qmd
+    - chapters/02-intro-r-and-rstudio.qmd
+    - chapters/03-getting-started-with-data.qmd
+    - chapters/04-getting-to-know-the-data.qmd
+    - chapters/05-formatting-the-data.qmd
+    - chapters/06-plotting-with-ggplot2.qmd
+    - chapters/07-colouring-by-categories.qmd
+    - chapters/08-creating-subplots-for-each-gene.qmd
+    - chapters/09-customising-the-plot.qmd
+    - chapters/10-saving-plots.qmd
+    - chapters/11-key-points.qmd
+    - chapters/12-further-reading.qmd
+  repo-url: https://github.com/Thanh-Phuc/intro-r-biologists
+  repo-actions: [edit, issue]
+  search: true
+  sidebar:
+    style: docked
+    collapse-level: 2
+  page-footer:
+    left: "© Maria Doyle, Jessica Chung, Vicky Perreau · CC BY 4.0"
+    center: "Adapted from Melbourne Bioinformatics"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - theme.scss
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap
+    df-print: paged
+    fig-width: 7
+    fig-height: 5
+    fig-dpi: 96
+    link-external-newwindow: true
+
+execute:
+  freeze: auto

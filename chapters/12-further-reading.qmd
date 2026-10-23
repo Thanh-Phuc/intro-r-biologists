@@ -1,0 +1,4 @@
+# Further Reading
+[A short intro to R and tidyverse](https://pmacdasci.github.io/r-intro-tidyverse/)  
+[Top 50 Ggplot Visualisations]( http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)  
+[R for Data Science](https://r4ds.had.co.nz/)

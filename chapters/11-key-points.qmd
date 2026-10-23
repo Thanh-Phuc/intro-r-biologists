@@ -1,0 +1,12 @@
+```{r shared-setup, include=FALSE}
+source("R/setup.R")
+```
+
+# Key Points
+- Tabular data can be loaded into R with the tidyverse functions `read_csv()` and `read_tsv()`
+- Tidyverse functions such as `pivot_longer()`, `mutate()`, `filter()`, `select()`, `full_join()` can be used to manipulate data
+- A ggplot has 3 components: data (dataset), mapping (columns to plot) and geom (type of plot). Different types of plots include `geom_point()`, `geom_jitter()`, `geom_line()`, `geom_boxplot()`, `geom_violin()`.
+- `facet_wrap()` can be used to make subplots of the data
+- The aesthetics of a ggplot can be modified, such as colouring by different columns in the dataset, adding labels or changing the background
+
+
