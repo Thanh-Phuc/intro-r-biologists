@@ -11,29 +11,17 @@ suppressPackageStartupMessages(library(tidyverse))
 
 options(width = 80)
 
-# readr 2.x repairs the blank first header of the course CSV files to "...1",
-# while the course text (and readr 1.x, with which it was written) calls that
-# column "X1". Keep the course's naming so the code and prose in the chapters
-# match the data they describe.
-read_csv <- function(..., show_col_types = TRUE) {
-  out <- readr::read_csv(..., show_col_types = show_col_types, name_repair = "minimal")
-  names(out)[names(out) == ""] <- "X1"
-  out
-}
-
 counts <- readr::read_csv(
   "data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv",
-  show_col_types = FALSE,
-  name_repair = "minimal"
+  show_col_types = FALSE
 )
-names(counts)[names(counts) == ""] <- "X1"
-
 sampleinfo <- readr::read_csv(
   "data/GSE60450_filtered_metadata.csv",
-  show_col_types = FALSE,
-  name_repair = "minimal"
+  show_col_types = FALSE
 )
-names(sampleinfo)[names(sampleinfo) == ""] <- "X1"
+
+colnames(sampleinfo)[1] <- "sample_id"
+colnames(counts)[1] <- "gene_id"
 
 seqdata <- pivot_longer(
   counts,
@@ -42,7 +30,7 @@ seqdata <- pivot_longer(
   values_to = "Count"
 )
 
-allinfo <- full_join(seqdata, sampleinfo, by = c("Sample" = "X1"))
+allinfo <- full_join(seqdata, sampleinfo, by = join_by(Sample == sample_id))
 
 allinfo <- mutate(allinfo, Group = case_when(
   str_detect(characteristics, "basal.*virgin") ~ "bvirg",

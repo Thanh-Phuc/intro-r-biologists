@@ -52,6 +52,7 @@ The box plots show that the distributions of the samples are not identical but t
 Box plots are useful summaries, but hide the shape of the distribution. For example, if the distribution is bimodal, we would not see it in a boxplot. An alternative to the boxplot is the **violin plot**, where the shape (of the density of points) is drawn. See [here](https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/) for an example of how differences in distribution may be hidden in box plots but revealed with violin plots.
 
 #### Exercise
+
 You can easily make different types of plots with ggplot by using different geoms. Using the same data (same x and y values), try editing the code above to make a violin plot (Hint: there's a `geom_violin`)
 
 

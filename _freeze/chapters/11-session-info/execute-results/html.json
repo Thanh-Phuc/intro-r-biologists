@@ -1,0 +1,19 @@
+{
+  "hash": "5a7f590240b809693c0bfeeed26ede2b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Session Info\n\nThe last thing we'll do run the `sessionInfo()` function. This function prints out details about your working environment such as the version of R you're running, loaded packages, and package versions. Printing out `sessionInfo()` at the end of your analysis is good practice as it helps with reproducibility in the future.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsessionInfo()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 27.0.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8\n\ntime zone: Asia/Ho_Chi_Minh\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.1    fastmap_1.2.0     cli_3.6.6        \n [5] tools_4.4.1       htmltools_0.5.9   otel_0.2.0        rmarkdown_2.30   \n [9] knitr_1.51        jsonlite_2.0.0    xfun_0.57         digest_0.6.39    \n[13] rlang_1.3.0       evaluate_1.0.5   \n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

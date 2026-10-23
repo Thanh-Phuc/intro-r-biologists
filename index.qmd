@@ -9,7 +9,7 @@ R takes time to learn, like a spoken language. No one can expect to be an R expe
 ::: {.callout-note collapse="true"}
 ## About this edition
 
-This Quarto book reproduces the *Introduction to R for Biologists* course by Maria Doyle, Jessica Chung and Vicky Perreau (Melbourne Bioinformatics), originally published as a single-page R Markdown document. The text, code, exercises and figures are unchanged; the chapters are the original top-level sections.
+This Quarto book reproduces the *Introduction to R for Biologists* course by Maria Doyle, Jessica Chung and Vicky Perreau (Melbourne Bioinformatics), published as a single-page R Markdown document. The text, code, exercises and figures are unchanged; the chapters are the original top-level sections.
 
-Source: [mblue9/r-intro-biologists](https://github.com/mblue9/r-intro-biologists) · Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+Source: [melbournebioinformatics/r-intro-biologists](https://github.com/melbournebioinformatics/r-intro-biologists) · Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 :::

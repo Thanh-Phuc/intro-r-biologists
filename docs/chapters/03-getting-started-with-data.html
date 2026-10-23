@@ -197,12 +197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  <a href="../chapters/11-session-info.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Session Info</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
+  <a href="../chapters/12-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
   </div>
 </li>
     </ul>
@@ -282,34 +287,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in counts file</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 23735 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): , gene_symbol
-dbl (12): GSM1480291, GSM1480292, GSM1480293, GSM1480294, GSM1480295, GSM148...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre><code>New names:
+Rows: 23735 Columns: 14
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(2): ...1, gene_symbol dbl (12): GSM1480291, GSM1480292, GSM1480293,
+GSM1480294, GSM1480295, GSM148...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in metadata</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sampleinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/GSE60450_filtered_metadata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 12 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (4): , characteristics, immunophenotype, developmental stage
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre><code>New names:
+Rows: 12 Columns: 4
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(4): ...1, characteristics, immunophenotype, developmental stage
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
 </div>
 </div>
-<p>There is some information output by read_csv on “column specification”. It tells us that there is a missing header and it has been filled with the name “X1”. It also tells us what data types read_csv is detecting in each column. Columns with text charactershave been detected (col_character) and also columns with numbers (col_double). We won’t get into the details of R data types in this tutorial but they are important to know and you can read more about them in the <a href="https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector">R for Data Science book</a>.</p>
+<p>There is some information output by read_csv on “column specification”. It tells us that there is a missing column name in the header and it has been filled with the name “…1”, which is how read_csv handles missing column names by default. It also tells us what data types read_csv is detecting in each column. Columns with text characters have been detected (col_character) and also columns with numbers (col_double). We won’t get into the details of R data types in this tutorial but they are important to know and you can read more about them in the <a href="https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector">R for Data Science book</a>.</p>
 <p>In R we use <code>&lt;-</code> to assign values to objects. <code>&lt;-</code> is the <strong>assignment operator</strong>. It assigns values on the right to objects on the left. So to create an object, we need to give it a name (e.g.&nbsp;<code>counts</code>), followed by the assignment operator <code>&lt;-</code>, and the value we want to give it. We can give an object almost any name we want but there are some rules and conventions as described in the <a href="https://style.tidyverse.org/syntax.html#object-names">tidyverse R style guide</a></p>
 <p>We can read in a file from a path on our computer on on the web and use this as the value. Note that we need to put quotes (““) around file paths.</p>
-<blockquote class="blockquote">
-<h4 id="assignment-operator-shortcut" class="anchored">Assignment operator shortcut</h4>
-<p>In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the same time as the <kbd>-</kbd> key) will write <code>&lt;-</code> in a single keystroke in Windows, while typing &gt; <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the same time as the <kbd>-</kbd> key) does the same in a Mac.</p>
-</blockquote>
+<p>
+</p><div class="info">
+<p><strong>ⓘ Assignment operator shortcut</strong><br>
+In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the same time as the <kbd>-</kbd> key) will write <code>&lt;-</code> in a single keystroke in Windows, while typing &gt; <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the same time as the <kbd>-</kbd> key) does the same in a Mac.</p>
+</div>
+<p></p>
 <section id="exercise" class="level4">
 <h4 class="anchored" data-anchor-id="exercise">Exercise</h4>
 <ol type="1">

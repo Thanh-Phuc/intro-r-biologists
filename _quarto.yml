@@ -22,8 +22,9 @@ book:
     - chapters/08-creating-subplots-for-each-gene.qmd
     - chapters/09-customising-the-plot.qmd
     - chapters/10-saving-plots.qmd
-    - chapters/11-key-points.qmd
-    - chapters/12-further-reading.qmd
+    - chapters/11-session-info.qmd
+    - chapters/12-key-points.qmd
+    - chapters/13-further-reading.qmd
   repo-url: https://github.com/Thanh-Phuc/intro-r-biologists
   repo-actions: [edit, issue]
   search: true

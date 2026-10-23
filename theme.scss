@@ -148,3 +148,18 @@ h4 {
   color: #5b6b76;
   font-size: 0.86em;
 }
+
+// Original course "info" boxes
+.info {
+  margin: 1.4rem auto;
+  background-color: #eaf0fb;
+  border: 1px solid #d5e2f7;
+  border-left: 4px solid #7fa6e0;
+  width: 95%;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+}
+
+.info p:last-child {
+  margin-bottom: 0;
+}

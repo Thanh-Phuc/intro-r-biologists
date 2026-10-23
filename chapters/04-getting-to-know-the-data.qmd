@@ -29,6 +29,7 @@ head(sampleinfo)
 ```
 
 We can look at the last few lines with `tail()`. This shows us the last 6 lines. This can be useful to check the bottom of the file, that it looks ok.
+
 ```{r}
 tail(sampleinfo)
 ```
@@ -42,21 +43,52 @@ View(sampleinfo)
 In the Environment tab we can see how many rows and columns the object contains and we can click on the icon to view all the contents in a tab. This runs the command View() for us.
 
 We can see all the column names with `colnames()`.
+
 ```{r}
 colnames(sampleinfo)
 ```
 
-We can access individual columns by name using the `$` symbol. For example we can see what's contained in column X1.
+We can access individual columns by name using the `$` symbol. For example we can see what's contained in the characteristics column.
 
 ```{r}
-sampleinfo$X1
+sampleinfo$characteristics
 ```
 
-If we just wanted to see the first 3 values in the column we can specify this using square brackets.
+If we just wanted to see the first 3 values in the column we can specify this using square brackets. Obtaining a selection of values this way is called 'subsetting'.
 
 ```{r}
-sampleinfo$X1[1:3]
+sampleinfo$characteristics[1:3]
 ```
+
+In the previous section, when we loaded in the data from the csv file, we noticed that the first column had a missing column name and by default, read_csv function assigned a name of "\...1" to it. Let's change this column to something more descriptive now. We can do this by combining a few things we've just learnt.
+
+First, we use the `colnames()` function to obtain the column names of sampleinfo. Then we use square brackets to subset the first value of the column names (`[1]`). Last, we use the assignment operator (`<-`) to set the new value of the first column name to "sample_id".
+
+```{r}
+colnames(sampleinfo)[1] <- "sample_id"
+```
+
+Let's check if this has been changed correctly.
+
+```{r}
+sampleinfo
+```
+
+The first column is now named "sample_id". 
+
+We can also do the same to the counts data. This time, we rename the first column name from "\...1" to "gene_id".
+
+```{r}
+colnames(counts)[1] <- "gene_id"
+```
+
+<p>
+<div class="info">
+**ⓘ Multiple methods**  
+There are multiple ways to rename columns. We've covered one way here, but another way is using the `rename()` function. When programming, you'll often find many ways to do the same thing. Often there is one obvious method depending on the context you're in. 
+</div>
+</p>
+
 
 Other useful commands for checking data are `str()` and `summary()`.
 

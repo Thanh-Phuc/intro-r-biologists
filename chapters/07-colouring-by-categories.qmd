@@ -25,6 +25,7 @@ That looks better. `fill = ` is used to **fill** in areas in ggplot2 plots, wher
 A really nice feature about ggplot is that we can easily colour by another variable by simply changing the column we give to `fill = `.
 
 #### Exercise 
+
 Modify the plot above. Colour by other variables (columns) in the metadata file:
 
 1. characteristics

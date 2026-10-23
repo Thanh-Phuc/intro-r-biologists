@@ -31,14 +31,9 @@ head(allinfo)
 
 We can make plots for a set of given genes.
 
-
-
-
 ```{r}
 mygenes <- c("Csn1s2a", "Csn1s1", "Csn2", "Glycam1", "COX1", "Trf", "Wap", "Eef1a1")
 ```
-
-
 
 
 We filter our data for just these genes of interest. We use `%in%` to check if a value is in a set of values.
@@ -46,6 +41,25 @@ We filter our data for just these genes of interest. We use `%in%` to check if a
 ```{r}
 mygenes_counts <- filter(allinfo, gene_symbol %in% mygenes)
 ```
+
+
+<p>
+<div class="info">
+**ⓘ An additional note about which genes we've chosen**  
+The genes we've picked are the 8 genes with the highest counts summed across all samples. The code for how to get the gene symbols for these 8 genes is shown below. This code uses [pipes](https://r4ds.had.co.nz/pipes.html) (`%>%`) to string a series of function calls together (which is beyond the scope of this tutorial, but totally worth learning about independently!).
+
+```
+mygenes <- allinfo %>%  
+  group_by(gene_symbol) %>%  
+  summarise(Total_count = sum(Count)) %>%  
+  arrange(desc(Total_count)) %>%  
+  head(n = 8) %>%  
+  pull(gene_symbol) 
+```
+
+</div>
+</p>
+
 
 ## Create plots for each gene
 
@@ -59,6 +73,7 @@ ggplot(data = mygenes_counts,
 ```
 
 The boxplots don't look good as we only have two values per group. We could just plot the individual points instead. We could use `geom_point()` to make a scatterplot.
+
 ```{r}
 ggplot(data = mygenes_counts, mapping = aes(x = Group, y = log2(Count + 1))) +
   geom_point() +

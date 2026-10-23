@@ -197,12 +197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  <a href="../chapters/11-session-info.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Session Info</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
+  <a href="../chapters/12-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
   </div>
 </li>
     </ul>
@@ -263,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["X1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["gene_symbol"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Sample"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Count"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["characteristics"],"name":[5],"type":["chr"],"align":["left"]},{"label":["immunophenotype"],"name":[6],"type":["chr"],"align":["left"]},{"label":["developmental stage"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Group"],"name":[8],"type":["chr"],"align":["left"]}],"data":[{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480291","4":"243.28596","5":"mammary gland, luminal cells, virgin","6":"luminal cell population","7":"virgin","8":"lvirg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480292","4":"255.66037","5":"mammary gland, luminal cells, virgin","6":"luminal cell population","7":"virgin","8":"lvirg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480293","4":"239.73819","5":"mammary gland, luminal cells, 18.5 day pregnancy","6":"luminal cell population","7":"18.5 day pregnancy","8":"lpreg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480294","4":"217.10047","5":"mammary gland, luminal cells, 18.5 day pregnancy","6":"luminal cell population","7":"18.5 day pregnancy","8":"lpreg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480295","4":"84.74389","5":"mammary gland, luminal cells, 2 day lactation","6":"luminal cell population","7":"2 day lactation","8":"llact"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480296","4":"84.59855","5":"mammary gland, luminal cells, 2 day lactation","6":"luminal cell population","7":"2 day lactation","8":"llact"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["gene_id"],"name":[1],"type":["chr"],"align":["left"]},{"label":["gene_symbol"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Sample"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Count"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["characteristics"],"name":[5],"type":["chr"],"align":["left"]},{"label":["immunophenotype"],"name":[6],"type":["chr"],"align":["left"]},{"label":["developmental stage"],"name":[7],"type":["chr"],"align":["left"]},{"label":["Group"],"name":[8],"type":["chr"],"align":["left"]}],"data":[{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480291","4":"243.28596","5":"mammary gland, luminal cells, virgin","6":"luminal cell population","7":"virgin","8":"lvirg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480292","4":"255.66037","5":"mammary gland, luminal cells, virgin","6":"luminal cell population","7":"virgin","8":"lvirg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480293","4":"239.73819","5":"mammary gland, luminal cells, 18.5 day pregnancy","6":"luminal cell population","7":"18.5 day pregnancy","8":"lpreg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480294","4":"217.10047","5":"mammary gland, luminal cells, 18.5 day pregnancy","6":"luminal cell population","7":"18.5 day pregnancy","8":"lpreg"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480295","4":"84.74389","5":"mammary gland, luminal cells, 2 day lactation","6":"luminal cell population","7":"2 day lactation","8":"llact"},{"1":"ENSMUSG00000000001","2":"Gnai3","3":"GSM1480296","4":"84.59855","5":"mammary gland, luminal cells, 2 day lactation","6":"luminal cell population","7":"2 day lactation","8":"llact"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -279,15 +284,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mygenes_counts <span class="ot">&lt;-</span> <span class="fu">filter</span>(allinfo, gene_symbol <span class="sc">%in%</span> mygenes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>
+</p><div class="info">
+<p><strong>ⓘ An additional note about which genes we’ve chosen</strong><br>
+The genes we’ve picked are the 8 genes with the highest counts summed across all samples. The code for how to get the gene symbols for these 8 genes is shown below. This code uses <a href="https://r4ds.had.co.nz/pipes.html">pipes</a> (<code>%&gt;%</code>) to string a series of function calls together (which is beyond the scope of this tutorial, but totally worth learning about independently!).</p>
+<pre><code>mygenes &lt;- allinfo %&gt;%  
+  group_by(gene_symbol) %&gt;%  
+  summarise(Total_count = sum(Count)) %&gt;%  
+  arrange(desc(Total_count)) %&gt;%  
+  head(n = 8) %&gt;%  
+  pull(gene_symbol) </code></pre>
+</div>
+<p></p>
 </section>
 <section id="create-plots-for-each-gene" class="level2">
 <h2 class="anchored" data-anchor-id="create-plots-for-each-gene">Create plots for each gene</h2>
 <p>We can make boxplots for just these genes. We <em>facet</em> on the <code>gene_symbol</code> column using <code>facet_wrap()</code>. We add the tilde symbol <code>~</code> in front of the column we want to facet on.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>), <span class="at">fill =</span> Group)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>), <span class="at">fill =</span> Group)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -298,9 +315,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The boxplots don’t look good as we only have two values per group. We could just plot the individual points instead. We could use <code>geom_point()</code> to make a scatterplot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -311,9 +328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The points are overlapping so we will make a jitter plot using <code>geom_jitter()</code>. A <strong>jitter plot</strong> is similar to a scatter plot. It adds a small amount of random variation to the location of each point so they don’t overlap. If is also quite common to combine jitter plots with other types of plot, for example, <a href="https://simplystatistics.org/2019/02/21/dynamite-plots-must-die/">jitter with boxplot</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -324,10 +341,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We can colour the groups similar to before using <code>colour =</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>), <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mygenes_counts, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Group, <span class="at">y =</span> <span class="fu">log2</span>(Count <span class="sc">+</span> <span class="dv">1</span>), <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gene_symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

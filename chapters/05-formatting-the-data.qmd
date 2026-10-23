@@ -29,13 +29,14 @@ seqdata <- pivot_longer(counts, cols = GSM1480291:GSM1480302,
 Alternatively, we could specify the columns we *don't* want to reformat and `pivot_longer()` will reformat all the other columns. To do that we put a minus sign "-" in front of the column names that we don't want to reformat. This is a pretty common way to use `pivot_longer()` as sometimes it is easier to exclude columns we don't want than include columns we do. The command below would give us the same result as the previous command.
 
 ```{r}
-seqdata <- pivot_longer(counts, cols = -c("X1", "gene_symbol"), 
+seqdata <- pivot_longer(counts, cols = -c("gene_id", "gene_symbol"), 
                         names_to = "Sample", values_to = "Count")
 ```
 
 Here we see the function `c()` for the first time. We use this function extremely often in R when we have multiple items that we are *combining*. We will see it again in this tutorial.
 
 Let's have a look at the data.
+
 ```{r}
 seqdata
 ```
@@ -46,10 +47,10 @@ Now that we've got just one column containing sample ids in both our counts and 
 
 ![](../images/join_data.png)
 
-We will use the function `full_join()` and give it the two tables we want to join. We add `by = c("Sample" = "X1")` to say we want to join on the column called "Sample"" in the first table (`seqdata`) and the column called "X1" in the second table (`sampleinfo`)
+We will use the function `full_join()` and give it the two tables we want to join. We add `by = join_by(Sample == sample_id)` to say we want to join on the column called "Sample" in the first table (`seqdata`) and the column called "sample_id" in the second table (`sampleinfo`) when the values match.
 
 ```{r}
-allinfo <- full_join(seqdata, sampleinfo, by = c("Sample" = "X1"))
+allinfo <- full_join(seqdata, sampleinfo, by = join_by(Sample == sample_id))
 ```
 
 Let's have a look at the data.
@@ -68,22 +69,22 @@ The two tables have been joined.
 5. How can you use `pivot_longer` to transform `dat` into a ‘tidy’ data called `dat_long` that contains 3 columns (sample, experiment, count).
 ```
 dat <-  tibble(sample = 1:10,
-             experiment_1 = rnorm(10),
-             experiment_2 = rnorm(10))
+               experiment_1 = rnorm(10),
+               experiment_2 = rnorm(10))
 ```             
 `dat_long` should look similar to what you get if you paste this into the console (the values in the count column will be different):
 ```
 dat_long <- tibble(sample = rep(1:10, each=2),
-experiment = rep(c("experiment_1", "experiment_2"), 10),
-count = rnorm(20))
+                   experiment = rep(c("experiment_1", "experiment_2"), 10),
+                   count = rnorm(20))
 dat_long
 ```
-6. If you have another table with sample information such as 
+6. Say you have another table containing sample information with samples assigned to either "Mutant" or "Control" such as:
 ```
-sampleinfo <- tibble(sample = 1:100,
-group = c(rep("Mutant", 50), rep("Control", 50)))
+sample_info <- tibble(sample = 1:100,
+                      group = c(rep("Mutant", 50), rep("Control", 50)))
 ```
-Join `dat_long` to `sampleinfo` using the common column called sample. How many rows do you get if you use i) `full_join`, ii) `left_join`, iii)  `right_join`, iv) `inner_join`?
+Join `dat_long` to `sample_info` using the common column called "sample". How many rows do you get if you use i) `full_join`, ii) `left_join`, iii)  `right_join`, iv) `inner_join`?
 
 
 

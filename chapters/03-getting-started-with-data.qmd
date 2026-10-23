@@ -1,7 +1,3 @@
-```{r shared-setup, include=FALSE}
-source("R/setup.R")
-```
-
 # Getting started with data
 
 
@@ -66,16 +62,22 @@ counts <- read_csv("data/GSE60450_GeneLevel_Normalized(CPM.and.TMM)_data.csv")
 sampleinfo <- read_csv("data/GSE60450_filtered_metadata.csv")
 ```
 
-There is some information output by read_csv on "column specification". It tells us that there is a missing header and it has been filled with the name "X1". It also tells us what data types read_csv is detecting in each column. Columns with text charactershave been detected (col_character) and also columns with numbers (col_double). We won't get into the details of R data types in this tutorial but they are important to know and you can read more about them in the [R for Data Science book](https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector).
+There is some information output by read_csv on "column specification". It tells us that there is a missing column name in the header and it has been filled with the name "...1", which is how read_csv handles missing column names by default. It also tells us what data types read_csv is detecting in each column. Columns with text characters have been detected (col_character) and also columns with numbers (col_double). We won't get into the details of R data types in this tutorial but they are important to know and you can read more about them in the [R for Data Science book](https://r4ds.had.co.nz/vectors.html#important-types-of-atomic-vector).
 
 In R we use `<-` to assign values to objects. `<-` is the **assignment operator**.  It assigns values on the right to objects on the left. So to create an object, we need to give it a name (e.g. `counts`), followed by the assignment operator `<-`, and the value we want to give it. We can give an object almost any name we want but there are some rules and conventions as described in the [tidyverse R style guide](https://style.tidyverse.org/syntax.html#object-names)
 
 We can read in a file from a path on our computer on on the web and use this as the value. Note that we need to put quotes ("") around file paths.
 
-> #### Assignment operator shortcut
-> In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the
-> same time as the <kbd>-</kbd> key) will write ` <- ` in a single keystroke in Windows, while typing > <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the
-> same time as the <kbd>-</kbd> key) does the same in a Mac. 
+
+<p>
+<div class="info">
+**ⓘ Assignment operator shortcut**  
+In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (holding down <kbd>Alt</kbd> at the
+same time as the <kbd>-</kbd> key) will write ` <- ` in a single keystroke in Windows, 
+while typing > <kbd>Option</kbd> + <kbd>-</kbd> (holding down <kbd>Option</kbd> at the
+same time as the <kbd>-</kbd> key) does the same in a Mac. 
+</div>
+</p>
 
 
 #### Exercise

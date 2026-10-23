@@ -7,7 +7,7 @@ The text, code, exercises and figures are reproduced unchanged from the
 original single-page R Markdown document; the chapters are its original
 top-level sections.
 
-- Original source: <https://github.com/mblue9/r-intro-biologists>
+- Original source: <https://github.com/melbournebioinformatics/r-intro-biologists>
 - Original rendering: <https://mbite.mdhs.unimelb.edu.au/r-intro-biologists/intro_r_biologists.html>
 - Licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 

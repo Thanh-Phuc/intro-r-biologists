@@ -41,11 +41,11 @@ Make a folder for this course somewhere on your computer that you will be able t
 
 In RStudio click on the ‘Files’ tab and then click on the three dots, as shown below.
 
-![](../images/three_dots.png)
+![](../images/three_dots.png){width=70%}
 
 In the window that appears, find the folder you created (e.g. `Intro_R_course`), click on it, then click ‘Open’. The files tab will now show the contents of your new folder. Click on `More > Set As Working Directory`, as shown below.
 
-![](../images/working_directory.png)
+![](../images/working_directory.png){width=70%}
 
 Save the script you created in the previous section as `intro.R` in this directory. You can do this by clicking on `File > Save` and the default location should be the current working directory (e.g. `Intro_R_course`).
 
@@ -71,8 +71,14 @@ To see what any function in R does, type a `?` before the name and help informat
 ?install.packages
 ```
 
-> ### Tab completion
-> A very useful feature is Tab completion. You can start typing and use <kbd>Tab</kbd> to autocomplete code, for example, a function name.
+
+<p>
+<div class="info">
+**ⓘ Tab completion**  
+A very useful feature is Tab completion. You can start typing and use <kbd>Tab</kbd> to autocomplete code, for example, a function name.
+</div>
+</p>
+
 
 ## Common R errors
 

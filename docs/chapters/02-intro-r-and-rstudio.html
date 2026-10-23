@@ -197,12 +197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  <a href="../chapters/11-session-info.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Session Info</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
+  <a href="../chapters/12-key-points.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Key Points</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-further-reading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Further Reading</span></a>
   </div>
 </li>
     </ul>
@@ -280,9 +285,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Opening an RStudio session launches it from a specific location. This is the ‘working directory’. <strong>R looks in the working directory by default to read in data and save files.</strong> You can find out what the working directory is by using the command <code>getwd()</code>. This shows you the path to your working directory in the console. In Mac this is in the format <code>/path/to/working/directory</code> and in Windows <code>C:\path\to\working\directory</code>. It is often useful to have your data and R scripts in the same directory and set this as your working directory. We will do this now.</p>
 <p>Make a folder for this course somewhere on your computer that you will be able to easily find. Name the folder for example, <code>Intro_R_course</code>. Then, to set this folder as your working directory:</p>
 <p>In RStudio click on the ‘Files’ tab and then click on the three dots, as shown below.</p>
-<p><img src="../images/three_dots.png" class="img-fluid"></p>
+<p><img src="../images/three_dots.png" class="img-fluid" style="width:70.0%"></p>
 <p>In the window that appears, find the folder you created (e.g.&nbsp;<code>Intro_R_course</code>), click on it, then click ‘Open’. The files tab will now show the contents of your new folder. Click on <code>More &gt; Set As Working Directory</code>, as shown below.</p>
-<p><img src="../images/working_directory.png" class="img-fluid"></p>
+<p><img src="../images/working_directory.png" class="img-fluid" style="width:70.0%"></p>
 <p>Save the script you created in the previous section as <code>intro.R</code> in this directory. You can do this by clicking on <code>File &gt; Save</code> and the default location should be the current working directory (e.g.&nbsp;<code>Intro_R_course</code>).</p>
 <p><em>Note: You can use an RStudio project as described <a href="https://r4ds.had.co.nz/workflow-projects.html">here</a> to automatically keep track of and set the working directory.</em></p>
 </section>
@@ -301,10 +306,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>?install.packages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<blockquote class="blockquote">
-<h3 id="tab-completion" class="anchored">Tab completion</h3>
-<p>A very useful feature is Tab completion. You can start typing and use <kbd>Tab</kbd> to autocomplete code, for example, a function name.</p>
-</blockquote>
+<p>
+</p><div class="info">
+<p><strong>ⓘ Tab completion</strong><br>
+A very useful feature is Tab completion. You can start typing and use <kbd>Tab</kbd> to autocomplete code, for example, a function name.</p>
+</div>
+<p></p>
 </section>
 <section id="common-r-errors" class="level2">
 <h2 class="anchored" data-anchor-id="common-r-errors">Common R errors</h2>

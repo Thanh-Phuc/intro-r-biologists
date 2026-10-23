@@ -24,6 +24,7 @@ dev.off()
 
 
 #### Exercise
+
 1. Download the raw counts for this dataset from GREIN
   a. Make a boxplot. Do the samples look any different to the normalised counts?
   b. Make subplots for the same set of 8 genes. Do they look any different to the normalised counts?

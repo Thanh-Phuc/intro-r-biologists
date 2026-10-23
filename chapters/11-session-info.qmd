@@ -1,0 +1,9 @@
+# Session Info
+
+The last thing we'll do run the `sessionInfo()` function. This function prints out details about your working environment such as the version of R you're running, loaded packages, and package versions. Printing out `sessionInfo()` at the end of your analysis is good practice as it helps with reproducibility in the future.
+
+```{r}
+sessionInfo()
+```
+
+

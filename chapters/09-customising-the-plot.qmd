@@ -102,6 +102,7 @@ ggplot(data = mygenes_counts,
 The groups have been plotted in alphabetical order on the x axis and in the legend (that is the default order), however, we may want to change the order. We may prefer to plot the groups in order of stage, for example, basal virgin, basal pregnant, basal lactate, luminal virgin, luminal pregnant, luminal lactate.
 
 First let's make an object with the group order that we want.
+
 ```{r}
 group_order <- c("bvirg", "bpreg", "blact", "lvirg", "lpreg", "llact")
 ```
@@ -117,7 +118,7 @@ mygenes_counts <- mutate(mygenes_counts, Group_f = factor(Group, levels = group_
 Take a look at the data. As the table is quite wide we can use `select()` to select just the columns we want to view.
 
 ```{r}
-mygenes_counts %>% select(X1, Group, Group_f)
+select(mygenes_counts, gene_id, Group, Group_f)
 ```
 
 Notice that the Group column has `<chr>` under the heading, that indicates is a character data type, while the Group_f column has `<fct>` under the heading, indicating it is a factor data type. The `str()` command that we saw previously is useful to check the data types in objects.
